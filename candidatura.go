@@ -37,9 +37,9 @@ func ToCSV(c []Candidatura) ([]byte, error) {
 }
 
 // FromJSON cria uma instância de candidatura preenchida com os dados contidos no JSON passado como parâmetro.
-func FromJSON(b []byte) (Candidatura, error) {
-	c := Candidatura{}
-	if err := json.Unmarshal(b, &c); err != nil {
+func FromJSON(b []byte) (*Candidatura, error) {
+	c := &Candidatura{}
+	if err := json.Unmarshal(b, c); err != nil {
 		return c, err
 	}
 	return c, nil

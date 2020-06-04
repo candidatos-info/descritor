@@ -51,7 +51,7 @@ type Candidatura struct {
 	DeclarouBens          bool   `json:"declarou_bens" csv:"declarou_bens"`           // Flag que informa se o candidato declarou seus bens na eleição.s
 	SituacaoPrimeiroTurno string `json:"situacao_1turno" csv:"situacao_1turno"`       // Campo que informa como o candidato terminou o primeiro turno da eleição (por exemplo como ELEITO, NÃO ELEITO, ELEITO POR MÉDIA) ou se foi para o segundo turno (ficando com situação SEGUNDO TURNO).
 	SituacaoSegundoTurno  string `json:"situacao_2turno" csv:"situacao_2turno"`       // Campo que informa como o candidato terminou o segundo turno da eleição, nesse caso só pondendo ficar como ELEITO ou NÃO ELEITO.
-	Candidato
+	Candidato             `json:"candidato"`
 }
 
 // ToJSON converte a candidatura para JSON.

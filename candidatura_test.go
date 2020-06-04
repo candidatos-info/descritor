@@ -51,7 +51,7 @@ func TestCandidatura(t *testing.T) {
 	}
 	is := is.New(t)
 	is.NoErr(err)
-	is.Equal(`{"leg":2016,"cargo":"EM","uf":"AL","municipio":"Município","numero_urna":45555,"nome_urna":"Lelinho do povo","aptidao":"APTO","deferimento":"DEFERIDO","tipo_agremiacao":"PARTIDO ISOLADO","numero_partio":45,"legenda_partido":"PSDB","nome_partido":"Partido Socilismo","nome_coligacao":"Todos pela cidade","partidos_coligacao":"PSDB/PT/PSC","declarou_bens":true,"situacao_1turno":"SEGUNDO TURNO","situacao_2turno":"ELEITO","uf_origem":"UF","municipio_origem":"Maceio","nascimento":"1997-11-29T00:00:00Z","titulo_eleitoral":"000000000","genero":"MASCULINO","grau_instrucao":"ENSINO MEDIO COMPLETO","estado_civil":"SOLTEIRO","raca":"PARDA","ocupacao":"ENGENHEIRO","cpf":"07496470430","nome":"Aurélio Buarque de Miranda Filho","email":"abuarquemf@gmail.com"}`, string(j))
+	is.Equal(`{"leg":2016,"cargo":"EM","uf":"AL","municipio":"Município","numero_urna":45555,"nome_urna":"Lelinho do povo","aptidao":"APTO","deferimento":"DEFERIDO","tipo_agremiacao":"PARTIDO ISOLADO","numero_partio":45,"legenda_partido":"PSDB","nome_partido":"Partido Socilismo","nome_coligacao":"Todos pela cidade","partidos_coligacao":"PSDB/PT/PSC","declarou_bens":true,"situacao_1turno":"SEGUNDO TURNO","situacao_2turno":"ELEITO","candidato":{"uf_origem":"UF","municipio_origem":"Maceio","nascimento":"1997-11-29T00:00:00Z","titulo_eleitoral":"000000000","genero":"MASCULINO","grau_instrucao":"ENSINO MEDIO COMPLETO","estado_civil":"SOLTEIRO","raca":"PARDA","ocupacao":"ENGENHEIRO","cpf":"07496470430","nome":"Aurélio Buarque de Miranda Filho","email":"abuarquemf@gmail.com"}}`, string(j))
 }
 
 func TestToCSV(t *testing.T) {

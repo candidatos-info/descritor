@@ -34,23 +34,24 @@ type Candidato struct {
 
 // Candidatura representa uma
 type Candidatura struct {
-	Legislatura           int    `json:"leg" csv:"leg"`                               // Ano eleitoral em que a candidatura foi homologada.
-	Cargo                 Cargo  `json:"cargo" csv:"cargo"`                           // Cargo sendo pleiteado pela candidatura.
-	UF                    string `json:"uf" csv:"uf"`                                 // Identificador (2 caracteres) de unidade federativa onde ocorreu a candidatura.
-	Municipio             string `json:"municipio" csv:"municipio"`                   // Município que ocorreu a eleição.
-	NumeroUrna            int    `json:"numero_urna" csv:"numero_urna"`               // Número do candidato na urna.
-	NomeUrna              string `json:"nome_urna" csv:"nome_urna"`                   // Nome do candidato na urna.
-	Aptidao               string `json:"aptidao" csv:"aptidao"`                       // Aptidao da candidatura (podendo ser APTO ou INAPTO).
-	Deferimento           string `json:"deferimento" csv:"deferimento"`               // Situação do candidato (pondendo ser DEFERIDO ou INDEFERIDO).
-	TipoAgremiacao        string `json:"tipo_agremiacao" csv:"tipo_agremiacao"`       // Indica o tipo de agremiação do candidato (podendo ser PARTIDO ISOLADO ou AGREMIAÇÃO).
-	NumeroPartido         int    `json:"numero_partio" csv:"numero_partido"`          // Número do partido do candidato.
-	LegendaPartido        string `json:"legenda_partido" csv:"legenda_partido"`       // Legenda do partido do candidato.
-	NomePartido           string `json:"nome_partido" csv:"nome_partido"`             // Nome do partido do candidato.
-	NomeColigacao         string `json:"nome_coligacao" csv:"nome_coligacao"`         // Nome da coligação a qual o candidato pertence.
-	PartidosColigacao     string `json:"partidos_coligacao" csv:"partidos_coligacao"` // Partidos pertencentes à coligação do candidato.
-	DeclarouBens          bool   `json:"declarou_bens" csv:"declarou_bens"`           // Flag que informa se o candidato declarou seus bens na eleição.s
-	SituacaoPrimeiroTurno string `json:"situacao_1turno" csv:"situacao_1turno"`       // Campo que informa como o candidato terminou o primeiro turno da eleição (por exemplo como ELEITO, NÃO ELEITO, ELEITO POR MÉDIA) ou se foi para o segundo turno (ficando com situação SEGUNDO TURNO).
-	SituacaoSegundoTurno  string `json:"situacao_2turno" csv:"situacao_2turno"`       // Campo que informa como o candidato terminou o segundo turno da eleição, nesse caso só pondendo ficar como ELEITO ou NÃO ELEITO.
+	Legislatura           int    `json:"leg" csv:"leg"`                                   // Ano eleitoral em que a candidatura foi homologada.
+	Cargo                 Cargo  `json:"cargo" csv:"cargo"`                               // Cargo sendo pleiteado pela candidatura.
+	UF                    string `json:"uf" csv:"uf"`                                     // Identificador (2 caracteres) de unidade federativa onde ocorreu a candidatura.
+	Municipio             string `json:"municipio" csv:"municipio"`                       // Município que ocorreu a eleição.
+	NumeroUrna            int    `json:"numero_urna" csv:"numero_urna"`                   // Número do candidato na urna.
+	NomeUrna              string `json:"nome_urna" csv:"nome_urna"`                       // Nome do candidato na urna.
+	Aptidao               string `json:"aptidao" csv:"aptidao"`                           // Aptidao da candidatura (podendo ser APTO ou INAPTO).
+	Deferimento           string `json:"deferimento" csv:"deferimento"`                   // Situação do candidato (pondendo ser DEFERIDO ou INDEFERIDO).
+	TipoAgremiacao        string `json:"tipo_agremiacao" csv:"tipo_agremiacao"`           // Indica o tipo de agremiação do candidato (podendo ser PARTIDO ISOLADO ou AGREMIAÇÃO).
+	NumeroPartido         int    `json:"numero_partio" csv:"numero_partido"`              // Número do partido do candidato.
+	LegendaPartido        string `json:"legenda_partido" csv:"legenda_partido"`           // Legenda do partido do candidato.
+	NomePartido           string `json:"nome_partido" csv:"nome_partido"`                 // Nome do partido do candidato.
+	NomeColigacao         string `json:"nome_coligacao" csv:"nome_coligacao"`             // Nome da coligação a qual o candidato pertence.
+	PartidosColigacao     string `json:"partidos_coligacao" csv:"partidos_coligacao"`     // Partidos pertencentes à coligação do candidato.
+	DeclarouBens          bool   `json:"declarou_bens" csv:"declarou_bens"`               // Flag que informa se o candidato declarou seus bens na eleição.s
+	SituacaoPrimeiroTurno string `json:"situacao_1turno" csv:"situacao_1turno"`           // Campo que informa como o candidato terminou o primeiro turno da eleição (por exemplo como ELEITO, NÃO ELEITO, ELEITO POR MÉDIA) ou se foi para o segundo turno (ficando com situação SEGUNDO TURNO).
+	SituacaoSegundoTurno  string `json:"situacao_2turno" csv:"situacao_2turno"`           // Campo que informa como o candidato terminou o segundo turno da eleição, nesse caso só pondendo ficar como ELEITO ou NÃO ELEITO.
+	SequencialCandidato   string `json:"sequencial_candidato" csv:"sequencial_candidato"` // ID sequencial do candidato no sistema do TSE
 	Candidato             `json:"candidato"`
 }
 

@@ -1,0 +1,46 @@
+syntax="proto3";
+
+package descritor;
+
+import "google/protobuf/timestamp.proto";
+
+message Candidatura {
+    int64 Legislatura = 1; // Ano eleitoral em que a candidatura foi homologada.
+    string Cargo = 2; // Cargo sendo pleiteado pela candidatura.
+    string UF = 3; // Identificador (2 caracteres) de unidade federativa onde ocorreu a candidatura.
+    string Municipio = 4; // Município que ocorreu a eleição.
+    int64 NumeroUrna = 5; // Número do candidato na urna.
+    string NomeUrna = 6; // Nome do candidato na urna.
+    string Aptdao = 7;  // Aptidao da candidatura (podendo ser APTO ou INAPTO).
+    string Deferimento = 8;  // Situação do candidato (pondendo ser DEFERIDO ou INDEFERIDO).
+    string TipoAgremiacao = 9; // Indica o tipo de agremiação do candidato (podendo ser PARTIDO ISOLADO ou AGREMIAÇÃO).
+    int64 NumeroPartido = 10; // Número do partido do candidato.
+    string LegendaPartido = 11; // Legenda do partido do candidato.
+    string NomePartido = 12; // Nome do partido do candidato.
+    string NomeColigacao = 13;  // Nome da coligação a qual o candidato pertence.
+    string PartidosColigacao = 14; // Partidos pertencentes à coligação do candidato.
+    bool DeclarouBens = 15; // Flag que informa se o candidato declarou seus bens na eleição.
+    string SituacaoPrimeiroTurno = 16; // Campo que informa como o candidato terminou o primeiro turno da eleição (por exemplo como ELEITO, NÃO ELEITO, ELEITO POR MÉDIA) ou se foi para o segundo turno (ficando com situação SEGUNDO TURNO).
+    string SituacaoSegundoTurno = 17; // Campo que informa como o candidato terminou o segundo turno da eleição, nesse caso só pondendo ficar como ELEITO ou NÃO ELEITO.
+    string SequencialCandidato = 18; // ID sequencial do candidato no sistema do TSE
+    Candidato candidato = 19; // Struct com dados do candidato
+}
+
+message Candidato {
+    string UF = 1; // Identificador (2 caracteres) da unidade federativa de nascimento do candidato.
+    string Municipio = 2; // Município de nascimento do candidato.
+    google.protobuf.Timestamp Nascimento = 3; // Data de nascimento do candidato.
+    string TituloEleitoral = 4; // Titulo eleitoral do candidato.
+    string Genero = 5; // Gênero do candidato (MASCULINO ou FEMININO).
+    string GrauInstrucao = 6; // Grau de instrução do candidato.
+    string EstadoCivil = 7; // Estado civil do candidato.
+    string Raca = 8; // Raça do candidato (como BRANCA ou PARDA).
+    string Ocupacao = 9; // Ocupação do candidato (como COMERCIANTE e ARTISTA por exemplo).
+    string CPF = 10; // CPF do candidato.
+    string Nome = 11; // Nome de pessoa física do candidato.
+    string Email = 12; // Email do candidato.
+}
+
+message CandidaturasDeCidade {
+    map<string, Candidatura> group = 1;
+}

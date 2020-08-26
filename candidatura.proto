@@ -39,6 +39,7 @@ message Candidato {
     string CPF = 10; // CPF do candidato.
     string Nome = 11; // Nome de pessoa física do candidato.
     string Email = 12; // Email do candidato.
+    string PhotoURL = 13; // URL contendo a foto do candidato
 }
 
 message CandidaturasDeCidade {

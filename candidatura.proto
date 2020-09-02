@@ -23,7 +23,8 @@ message Candidatura {
     string SituacaoPrimeiroTurno = 16; // Campo que informa como o candidato terminou o primeiro turno da eleição (por exemplo como ELEITO, NÃO ELEITO, ELEITO POR MÉDIA) ou se foi para o segundo turno (ficando com situação SEGUNDO TURNO).
     string SituacaoSegundoTurno = 17; // Campo que informa como o candidato terminou o segundo turno da eleição, nesse caso só pondendo ficar como ELEITO ou NÃO ELEITO.
     string SequencialCandidato = 18; // ID sequencial do candidato no sistema do TSE
-    Candidato candidato = 19; // Struct com dados do candidato
+    string Descricao = 19; // Descrição da candidatura
+    Candidato Candidato = 20; // Struct com dados do candidato
 }
 
 message Candidato {
@@ -39,7 +40,12 @@ message Candidato {
     string CPF = 10; // CPF do candidato.
     string Nome = 11; // Nome de pessoa física do candidato.
     string Email = 12; // Email do candidato.
-    string PhotoURL = 13; // URL contendo a foto do candidato
+    string PhotoURL = 13; // URL contendo a foto do candidato.
+    string Site = 14; // Site do candidato.
+    string Instagram = 15; // Instagram do candidato.
+    string Twitter  = 16; // Twitter do candidato.
+    string Facebook = 17; // Facebook do candidato.
+    string Biografia = 18; // Mini biografia do candidato.
 }
 
 message CandidaturasDeCidade {

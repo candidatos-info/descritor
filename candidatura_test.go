@@ -35,6 +35,7 @@ func TestCandidatura(t *testing.T) {
 		SituacaoPrimeiroTurno: "SEGUNDO TURNO",
 		DeclarouBens:          true,
 		SequencialCandidato:   "505",
+		Descricao:             "Vamos mudar nossa cidade",
 		Candidato: &Candidato{
 			Email:           "abuarquemf@gmail.com",
 			Nome:            "Aurélio Buarque de Miranda Filho",
@@ -49,6 +50,11 @@ func TestCandidatura(t *testing.T) {
 			Raca:            "PARDA",
 			Ocupacao:        "ENGENHEIRO",
 			PhotoURL:        "http://host.com/picture",
+			Site:            "http://candidato.com",
+			Instagram:       "Instagram",
+			Twitter:         "twitter",
+			Facebook:        "facebook",
+			Biografia:       "um politico honesto",
 		},
 	}
 	j, err := cand.ToJSON()
@@ -57,7 +63,7 @@ func TestCandidatura(t *testing.T) {
 	}
 	is := is.New(t)
 	is.NoErr(err)
-	is.Equal(`{"leg":2016,"cargo":"Prefeito","uf":"AL","municipio":"Município","numero_urna":45555,"nome_urna":"Lelinho do povo","aptidao":"APTO","deferimento":"DEFERIDO","tipo_agremiacao":"PARTIDO ISOLADO","numero_partio":45,"legenda_partido":"PSDB","nome_partido":"Partido Socilismo","nome_coligacao":"Todos pela cidade","partidos_coligacao":"PSDB/PT/PSC","declarou_bens":true,"situacao_1turno":"SEGUNDO TURNO","situacao_2turno":"ELEITO","sequencial_candidato":"505","candidato":{"uf_origem":"UF","municipio_origem":"Maceio","nascimento":{},"titulo_eleitoral":"000000000","genero":"MASCULINO","grau_instrucao":"ENSINO MEDIO COMPLETO","estado_civil":"SOLTEIRO","raca":"PARDA","ocupacao":"ENGENHEIRO","cpf":"07496470430","nome":"Aurélio Buarque de Miranda Filho","email":"abuarquemf@gmail.com","photo_url":"http://host.com/picture"}}`, string(j))
+	is.Equal(`{"leg":2016,"cargo":"Prefeito","uf":"AL","municipio":"Município","numero_urna":45555,"nome_urna":"Lelinho do povo","aptidao":"APTO","deferimento":"DEFERIDO","tipo_agremiacao":"PARTIDO ISOLADO","numero_partio":45,"legenda_partido":"PSDB","nome_partido":"Partido Socilismo","nome_coligacao":"Todos pela cidade","partidos_coligacao":"PSDB/PT/PSC","declarou_bens":true,"situacao_1turno":"SEGUNDO TURNO","situacao_2turno":"ELEITO","sequencial_candidato":"505","descricao":"Vamos mudar nossa cidade","candidato":{"uf_origem":"UF","municipio_origem":"Maceio","nascimento":{},"titulo_eleitoral":"000000000","genero":"MASCULINO","grau_instrucao":"ENSINO MEDIO COMPLETO","estado_civil":"SOLTEIRO","raca":"PARDA","ocupacao":"ENGENHEIRO","cpf":"07496470430","nome":"Aurélio Buarque de Miranda Filho","email":"abuarquemf@gmail.com","photo_url":"http://host.com/picture","site":"http://candidato.com","instagram":"Instagram","twitter":"twitter","facebook":"facebook","biografia":"um politico honesto"}}`, string(j))
 }
 
 func TestToCSV(t *testing.T) {
@@ -84,10 +90,11 @@ func TestToCSV(t *testing.T) {
 			NomePartido:           "Partido Socilismo",
 			NomeColigacao:         "Todos pela cidade",
 			PartidosColigacao:     "PSDB/PT/PSC",
-			DeclarouBens:          true,
 			SituacaoSegundoTurno:  "ELEITO",
 			SituacaoPrimeiroTurno: "SEGUNDO TURNO",
+			DeclarouBens:          true,
 			SequencialCandidato:   "505",
+			Descricao:             "Vamos mudar nossa cidade",
 			Candidato: &Candidato{
 				Email:           "abuarquemf@gmail.com",
 				Nome:            "Aurélio Buarque de Miranda Filho",
@@ -102,6 +109,11 @@ func TestToCSV(t *testing.T) {
 				Raca:            "PARDA",
 				Ocupacao:        "ENGENHEIRO",
 				PhotoURL:        "http://host.com/picture",
+				Site:            "http://candidato.com",
+				Instagram:       "Instagram",
+				Twitter:         "twitter",
+				Facebook:        "facebook",
+				Biografia:       "um politico honesto",
 			},
 		},
 		{
@@ -119,10 +131,11 @@ func TestToCSV(t *testing.T) {
 			NomePartido:           "Partido Socilismo",
 			NomeColigacao:         "Todos pela cidade",
 			PartidosColigacao:     "PSDB/PT/PSC",
+			SituacaoSegundoTurno:  "ELEITO",
+			SituacaoPrimeiroTurno: "SEGUNDO TURNO",
 			DeclarouBens:          true,
-			SituacaoSegundoTurno:  "",
-			SituacaoPrimeiroTurno: "ELEITO",
 			SequencialCandidato:   "505",
+			Descricao:             "Vamos mudar nossa cidade",
 			Candidato: &Candidato{
 				Email:           "abuarquemf@gmail.com",
 				Nome:            "Aurélio Buarque de Miranda Filho",
@@ -137,6 +150,11 @@ func TestToCSV(t *testing.T) {
 				Raca:            "PARDA",
 				Ocupacao:        "ENGENHEIRO",
 				PhotoURL:        "http://host.com/picture",
+				Site:            "http://candidato.com",
+				Instagram:       "Instagram",
+				Twitter:         "twitter",
+				Facebook:        "facebook",
+				Biografia:       "um politico honesto",
 			},
 		},
 	}
@@ -146,5 +164,5 @@ func TestToCSV(t *testing.T) {
 	}
 	is := is.New(t)
 	is.NoErr(err)
-	is.Equal("leg,cargo,uf,municipio,numero_urna,nome_urna,aptidao,deferimento,tipo_agremiacao,numero_partido,legenda_partido,nome_partido,nome_coligacao,partidos_coligacao,declarou_bens,situacao_1turno,situacao_2turno,sequencial_candidato,uf_origem,municipio_origem,Seconds,Nanos,nascimento,titulo_eleitoral,genero,grau_instrucao,estado_civil,raca,ocupacao,cpf,nome,email,photo_url\n2016,Prefeito,AL,Município,45555,Lelinho do povo,APTO,DEFERIDO,PARTIDO ISOLADO,45,PSDB,Partido Socilismo,Todos pela cidade,PSDB/PT/PSC,true,SEGUNDO TURNO,ELEITO,505,UF,Maceio,0,0,,000000000,MASCULINO,ENSINO MEDIO COMPLETO,SOLTEIRO,PARDA,ENGENHEIRO,07496470430,Aurélio Buarque de Miranda Filho,abuarquemf@gmail.com,http://host.com/picture\n2016,Prefeito,AL,Município,45555,Lelinho do povo,APTO,DEFERIDO,PARTIDO ISOLADO,45,PSDB,Partido Socilismo,Todos pela cidade,PSDB/PT/PSC,true,ELEITO,,505,UF,Maceio,0,0,,000000000,MASCULINO,ENSINO MEDIO COMPLETO,SOLTEIRO,PARDA,ENGENHEIRO,07496470430,Aurélio Buarque de Miranda Filho,abuarquemf@gmail.com,http://host.com/picture\n", string(b))
+	is.Equal("leg,cargo,uf,municipio,numero_urna,nome_urna,aptidao,deferimento,tipo_agremiacao,numero_partido,legenda_partido,nome_partido,nome_coligacao,partidos_coligacao,declarou_bens,situacao_1turno,situacao_2turno,sequencial_candidato,descricao,uf_origem,municipio_origem,Seconds,Nanos,nascimento,titulo_eleitoral,genero,grau_instrucao,estado_civil,raca,ocupacao,cpf,nome,email,photo_url,site,instagram,twitter,facebook,biografia\n2016,Prefeito,AL,Município,45555,Lelinho do povo,APTO,DEFERIDO,PARTIDO ISOLADO,45,PSDB,Partido Socilismo,Todos pela cidade,PSDB/PT/PSC,true,SEGUNDO TURNO,ELEITO,505,Vamos mudar nossa cidade,UF,Maceio,0,0,,000000000,MASCULINO,ENSINO MEDIO COMPLETO,SOLTEIRO,PARDA,ENGENHEIRO,07496470430,Aurélio Buarque de Miranda Filho,abuarquemf@gmail.com,http://host.com/picture,http://candidato.com,Instagram,twitter,facebook,um politico honesto\n2016,Prefeito,AL,Município,45555,Lelinho do povo,APTO,DEFERIDO,PARTIDO ISOLADO,45,PSDB,Partido Socilismo,Todos pela cidade,PSDB/PT/PSC,true,SEGUNDO TURNO,ELEITO,505,Vamos mudar nossa cidade,UF,Maceio,0,0,,000000000,MASCULINO,ENSINO MEDIO COMPLETO,SOLTEIRO,PARDA,ENGENHEIRO,07496470430,Aurélio Buarque de Miranda Filho,abuarquemf@gmail.com,http://host.com/picture,http://candidato.com,Instagram,twitter,facebook,um politico honesto\n", string(b))
 }

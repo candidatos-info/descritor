@@ -48,6 +48,3 @@ message Candidato {
     string Biografia = 18; // Mini biografia do candidato.
 }
 
-message CandidaturasDeCidade {
-    map<string, Candidatura> group = 1;
-}

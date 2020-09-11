@@ -3,8 +3,8 @@ package descritor
 const (
 	// CandidaturesCollection é o nome da coleção das candidaturas.
 	CandidaturesCollection = "candidatures"
-	// Locations é o nome da coleção de estados e suas cidades
-	Locations = "locations"
+	// LocationsCollection é o nome da coleção de estados e suas cidades
+	LocationsCollection = "locations"
 )
 
 // VotingCity é a struct que encapsula as candidaturas de uma cidade.

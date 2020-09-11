@@ -38,7 +38,7 @@ type CandidateForDB struct {
 	BallotName          string `datastore:"ballot_name,omitempty"`          // Nome do candidato na urna.
 	BallotNumber        int    `datastore:"ballot_number,omitempty"`        // Número do candidato na urna.
 	Email               string `datastore:"email,omitempty"`                // Email do candidato.
-	Role                string `datastore:"role,omitempty"`                 // Cargo do candidato (como prefeito ou vereador).
+	Role                string `datastore:"role,omitempty"`                 // Cargo do candidato (como vereador ou prefeito).
 }
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.

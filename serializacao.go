@@ -6,6 +6,15 @@ import (
 	"github.com/gocarina/gocsv"
 )
 
+var (
+	// RolesMap is as map that create alias for candidates roles
+	RolesMap = map[string]string{
+		"VEREADOR":      "LM",  // Legislativo Municipal
+		"VICE-PREFEITO": "VEM", // Vice Executivo Municipal
+		"PREFEITO":      "EM",  // Executivo Municipal
+	}
+)
+
 // ToJSON converte a candidatura para JSON.
 func (c *Candidatura) ToJSON() ([]byte, error) {
 	return json.Marshal(c)

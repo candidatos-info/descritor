@@ -3,8 +3,8 @@ package descritor
 const (
 	// CandidaturesCollection é o nome da coleção das candidaturas.
 	CandidaturesCollection = "candidatures"
-	// Locations é o nome da coleção de estados e suas cidades
-	Locations = "locations"
+	// LocationsCollection é o nome da coleção de estados e suas cidades
+	LocationsCollection = "locations"
 )
 
 // VotingCity é a struct que encapsula as candidaturas de uma cidade.
@@ -42,6 +42,6 @@ type CandidateForDB struct {
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.
 type Location struct {
-	State  string   `datastore:"state"`   // Estado que está ocorrendo uma eleição.
-	Cities []string `datastore:"cities "` // Cidades do estado onde está ocorrendo uma eleição.
+	State  string   `datastore:"state"`  // Estado que está ocorrendo uma eleição.
+	Cities []string `datastore:"cities"` // Cidades do estado onde está ocorrendo uma eleição.
 }

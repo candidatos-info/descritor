@@ -54,5 +54,5 @@ type Location struct {
 // AccessToken é uma struct para armazenar os códigos de acessos de perfil dos candidatos
 type AccessToken struct {
 	Code     string    `datastore:"code,omitempty"` // Código de acesso de perfil.
-	IssuedAt time.Time `datastore:"issued_at"`      // Hora de criação.
+	IssuedAt time.Time `datastore:"issued_at"`      // Hora que token foi criado.
 }

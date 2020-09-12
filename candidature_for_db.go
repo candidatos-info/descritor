@@ -1,10 +1,14 @@
 package descritor
 
+import "time"
+
 const (
 	// CandidaturesCollection é o nome da coleção das candidaturas.
 	CandidaturesCollection = "candidatures"
 	// LocationsCollection é o nome da coleção de estados e suas cidades
 	LocationsCollection = "locations"
+	// AccessTokenCollection é o nome da coleção de códigos de acessos
+	AccessTokenCollection = "access_tokens"
 )
 
 // VotingCity é a struct que encapsula as candidaturas de uma cidade.
@@ -39,11 +43,16 @@ type CandidateForDB struct {
 	BallotNumber        int    `datastore:"ballot_number,omitempty"`        // Número do candidato na urna.
 	Email               string `datastore:"email,omitempty"`                // Email do candidato.
 	Role                string `datastore:"role,omitempty"`                 // Cargo do candidato (como vereador ou prefeito).
-	AccessToken         string `datastore:"access_token,omitempty"`         // Token temporário para acesso do perfil.
 }
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.
 type Location struct {
 	State  string   `datastore:"state"`  // Estado que está ocorrendo uma eleição.
 	Cities []string `datastore:"cities"` // Cidades do estado onde está ocorrendo uma eleição.
+}
+
+// AccessToken é uma struct para armazenar os códigos de acessos de perfil dos candidatos
+type AccessToken struct {
+	Code     string    `datastore:"code,omitempty"` // Código de acesso de perfil.
+	IssuedAt time.Time `datastore:"issued_at"`      // Hora de criação.
 }

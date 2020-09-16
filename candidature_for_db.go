@@ -5,7 +5,14 @@ const (
 	CandidaturesCollection = "candidatures"
 	// LocationsCollection é o nome da coleção de estados e suas cidades
 	LocationsCollection = "locations"
+	// TagsCollection é o nome da coleção de tags
+	TagsCollection = "tags"
 )
+
+// Tag é uma struct usada para armazenar as tags do sistema
+type Tag struct {
+	Tag string `datastore:"tag,omitempty"`
+}
 
 // VotingCity é a struct que encapsula as candidaturas de uma cidade.
 // Para cada eleição salvamos as candidaturas agrupadas todas por cidade, ou seja,

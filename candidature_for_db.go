@@ -5,14 +5,7 @@ const (
 	CandidaturesCollection = "candidatures"
 	// LocationsCollection é o nome da coleção de estados e suas cidades
 	LocationsCollection = "locations"
-	// TagsCollection é o nome da coleção de tags
-	TagsCollection = "tags"
 )
-
-// Tag é uma struct usada para armazenar as tags do sistema
-type Tag struct {
-	Tag string `datastore:"tag,omitempty"`
-}
 
 // VotingCity é a struct que encapsula as candidaturas de uma cidade.
 // Para cada eleição salvamos as candidaturas agrupadas todas por cidade, ou seja,
@@ -32,10 +25,6 @@ type VotingCity struct {
 // Essa struct é usada somente para persistência em banco e para atender requisitos da UI do site.
 type CandidateForDB struct {
 	SequencialCandidate string   `datastore:"sequencial_candidate,omitempty"` // ID sequencial do candidato no sistema do TSE.
-	Site                string   `datastore:"site,omitempty"`                 // URL do site do candidato.
-	Facebook            string   `datastore:"facebook,omitempty"`             // Facebook do candidato.
-	Twitter             string   `datastore:"twitter,omitempty"`              // Twitter do candidato.
-	Instagram           string   `datastore:"instagram,omitempty"`            // Instagram do candidato.
 	Description         string   `datastore:"description,omitempty"`          // Description do candidato.
 	Biography           string   `datastore:"biography,omitempty"`            // Biography do candidato.
 	PhotoURL            string   `datastore:"photo_url,omitempty"`            // URL da foto do candidato.
@@ -50,6 +39,15 @@ type CandidateForDB struct {
 	City                string   `datastore:"city,omitempty"`                 // Cidade da eleição.
 	Year                int      `datastore:"year,omitempty"`                 // Ano da eleição.
 	Tags                []string `datastore:"tags,omitempty"`                 // Tags do candidato.
+	Gender              string   `datastore:"gender,omitempty"`               // Gênero do candidato.
+	Transparence        float64  `datastore:"transparence,omitempty"`         // Porcentagem de transparência do candidato.
+	Contact             *Contact `datastore:"contact,omitempty"`              // Dados de contato do candidato.
+}
+
+// Contact é um struct para armazenar os dados de contato do candidato.
+type Contact struct {
+	IconURL string `datastore:"icon_url,omitempty"` // Ícone do contato, podendo ser o link para a logo do Instagram, ou Facebook...
+	Link    string `datastore:"link,omitempty"`     // Link de contato, podendo ser o link para o Instagram, um site, ou o telefone do candidato.
 }
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.

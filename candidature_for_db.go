@@ -52,6 +52,6 @@ type Contact struct {
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.
 type Location struct {
-	State  string   `datastore:"state" bson:"link,omitempty"` // Estado que está ocorrendo uma eleição.
-	Cities []string `datastore:"cities" bson:"cities"`        // Cidades do estado onde está ocorrendo uma eleição.
+	State  string   `datastore:"state" bson:"state,omitempty"`   // Estado que está ocorrendo uma eleição.
+	Cities []string `datastore:"cities" bson:"cities,omitempty"` // Cidades do estado onde está ocorrendo uma eleição.
 }

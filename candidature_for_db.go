@@ -40,7 +40,7 @@ type CandidateForDB struct {
 	Year                int      `datastore:"year,omitempty" bson:"year,omitempty"`                                 // Ano da eleição.
 	Tags                []string `datastore:"tags,omitempty" bson:"tags,omitempty"`                                 // Tags do candidato.
 	Gender              string   `datastore:"gender,omitempty" bson:"gender,omitempty"`                             // Gênero do candidato.
-	Transparence        float64  `datastore:"transparence,omitempty" bson:"transparence,omitempty"`                 // Porcentagem de transparência do candidato.
+	Transparency        float64  `datastore:"transparency,omitempty" bson:"transparency,omitempty"`                 // Porcentagem de transparência do candidato.
 	Contact             *Contact `datastore:"contact,omitempty" bson:"contact,omitempty"`                           // Dados de contato do candidato.
 }
 

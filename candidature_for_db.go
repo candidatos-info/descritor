@@ -42,6 +42,7 @@ type CandidateForDB struct {
 	Gender              string   `datastore:"gender,omitempty" bson:"gender,omitempty"`                             // Gênero do candidato.
 	Transparency        float64  `datastore:"transparency,omitempty" bson:"transparency,omitempty"`                 // Porcentagem de transparência do candidato.
 	Contact             *Contact `datastore:"contact,omitempty" bson:"contact,omitempty"`                           // Dados de contato do candidato.
+	Reccurent           bool     `datastore:"reccurent,omitempty" bson:"recurrent,omitempty"`                       // Flag que indica se candidato participou do último pleito.
 }
 
 // Contact é um struct para armazenar os dados de contato do candidato.

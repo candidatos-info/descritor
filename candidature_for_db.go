@@ -41,7 +41,7 @@ type CandidateForDB struct {
 	Proposals           []*Proposal `datastore:"proposal,omitempty" bson:"proposal,omitempty"`                         // Propostas do candidato.
 	Gender              string      `datastore:"gender,omitempty" bson:"gender,omitempty"`                             // Gênero do candidato.
 	Transparency        float64     `datastore:"transparency,omitempty" bson:"transparency,omitempty"`                 // Porcentagem de transparência do candidato.
-	Contact             *Contact    `datastore:"contact,omitempty" bson:"contact,omitempty"`                           // Dados de contato do candidato.
+	Contacts            []*Contact  `datastore:"contacts,omitempty" bson:"contacts,omitempty"`                         // Dados de contato do candidato.
 	Recurrent           bool        `datastore:"recurrent,omitempty" bson:"recurrent,omitempty"`                       // Flag que indica se candidato participou do último pleito.
 }
 
@@ -53,8 +53,8 @@ type Proposal struct {
 
 // Contact é um struct para armazenar os dados de contato do candidato.
 type Contact struct {
-	IconURL string `datastore:"icon_url,omitempty" bson:"icon_url,omitempty"` // Ícone do contato, podendo ser o link para a logo do Instagram, ou Facebook...
-	Link    string `datastore:"link,omitempty" bson:"link,omitempty"`         // Link de contato, podendo ser o link para o Instagram, um site, ou o telefone do candidato.
+	SocialNetwork string `datastore:"social_network,omitempty" bson:"social_network,omitempty"` // Rede social do candidato, podendo ser o link para a logo do Instagram, ou Facebook...
+	value         string `datastore:"value,omitempty" bson:"value,omitempty"`                   // Endereço da rede social, podendo ser o link para o Instagram, um site, ou o telefone do candidato.
 }
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.

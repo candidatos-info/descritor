@@ -7,20 +7,6 @@ const (
 	LocationsCollection = "locations"
 )
 
-// VotingCity é a struct que encapsula as candidaturas de uma cidade.
-// Para cada eleição salvamos as candidaturas agrupadas todas por cidade, ou seja,
-// uma eleição no Brasil vai resultar em 5570 inserçōes uma vez que o Brasil possui
-// esta quantidade de cidades (https://pt.wikipedia.org/wiki/Lista_de_estados_brasileiros_por_n%C3%BAmero_de_munic%C3%ADpios).
-//
-// Essa struct é usada pelo projeto resumidor de banco de dados (https://github.com/candidatos-info/resumidores) para fazer a escrita no banco
-// e pelo site (https://github.com/candidatos-info/site) para renderizar dados no frontend.
-type VotingCity struct {
-	Year       int               `datastore:"year,omitempty"`       // Ano de eleição.
-	City       string            `datastore:"city,omitempty"`       // Cidade da eleição.
-	State      string            `datastore:"state,omitempty"`      // Estado da eleição.
-	Candidates []*CandidateForDB `datastore:"candidates,omitempty"` // Lista com os candidatos da cidade.
-}
-
 // CandidateForDB é uma struct que contem alguns dos atributos da struct Candidatura.
 // Essa struct é usada somente para persistência em banco e para atender requisitos da UI do site.
 type CandidateForDB struct {

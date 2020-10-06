@@ -1,4 +1,4 @@
-module github.com/candidatos-info/descritor/v2
+module github.com/candidatos-info/descritor
 
 go 1.14
 

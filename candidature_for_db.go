@@ -40,7 +40,7 @@ type Proposal struct {
 // Contact é um struct para armazenar os dados de contato do candidato.
 type Contact struct {
 	SocialNetwork string `datastore:"social_network,omitempty" bson:"social_network,omitempty"` // Rede social do candidato, podendo ser o link para a logo do Instagram, ou Facebook...
-	value         string `datastore:"value,omitempty" bson:"value,omitempty"`                   // Endereço da rede social, podendo ser o link para o Instagram, um site, ou o telefone do candidato.
+	Value         string `datastore:"value,omitempty" bson:"value,omitempty"`                   // Endereço da rede social, podendo ser o link para o Instagram, um site, ou o telefone do candidato.
 }
 
 // Location é uma struct que contem um estado que está ocorrendo a eleição e suas cidades.

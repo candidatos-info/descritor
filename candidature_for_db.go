@@ -38,7 +38,7 @@ type CandidateForDB struct {
 	State               string      `datastore:"state,omitempty" bson:"state,omitempty"`                               // Estado da eleição.
 	City                string      `datastore:"city,omitempty" bson:"city,omitempty"`                                 // Cidade da eleição.
 	Year                int         `datastore:"year,omitempty" bson:"year,omitempty"`                                 // Ano da eleição.
-	Proposals           []*Proposal `datastore:"proposal,omitempty" bson:"proposal,omitempty"`                         // Propostas do candidato.
+	Proposals           []*Proposal `datastore:"proposals,omitempty" bson:"proposals,omitempty"`                       // Propostas do candidato.
 	Gender              string      `datastore:"gender,omitempty" bson:"gender,omitempty"`                             // Gênero do candidato.
 	Transparency        float64     `datastore:"transparency,omitempty" bson:"transparency,omitempty"`                 // Porcentagem de transparência do candidato.
 	Contacts            []*Contact  `datastore:"contacts,omitempty" bson:"contacts,omitempty"`                         // Dados de contato do candidato.

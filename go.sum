@@ -1,4 +1,6 @@
 github.com/candidatos-info/descritor v1.0.0 h1:CusA4GN6Lu+g87lvk1ZiwAG8JyjEScwlRthpGkfL5hY=
+github.com/candidatos-info/descritor/v2 v2.0.2 h1:9i97lq0uM6H+46k64eUuPnijpgFlacm1I41iLqJ1Fyw=
+github.com/candidatos-info/descritor/v2 v2.0.2/go.mod h1:RBYETfAZy97aioIfnzMFzQxxZ4PPHpxaQlYV3MrALeQ=
 github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3 h1:B7k6N+JlLM/u1xrIkpifUfE7GRJsZIYHoHbiAa5cSP4=
 github.com/gocarina/gocsv v0.0.0-20200330101823-46266ca37bd3/go.mod h1:5YoVOkjYAQumqlV356Hj3xeYh4BdZuLE0/nRkf2NKkI=
 github.com/gocarina/gocsv v0.0.0-20200925213129-04be9ee2e1a2 h1:66G8poRcUE6rtwuckM7ZoLKlyNw5PYytEktymzi/Xds=

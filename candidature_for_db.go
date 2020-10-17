@@ -1,5 +1,7 @@
 package descritor
 
+import "time"
+
 const (
 	// CandidaturesCollection é o nome da coleção das candidaturas.
 	CandidaturesCollection = "candidatures"
@@ -29,6 +31,7 @@ type CandidateForDB struct {
 	Transparency        float64     `datastore:"transparency,omitempty" bson:"transparency,omitempty" json:"transparency,omitempty"`                         // Porcentagem de transparência do candidato.
 	Contacts            []*Contact  `datastore:"contacts,omitempty" bson:"contacts,omitempty" json:"contacts,omitempty"`                                     // Dados de contato do candidato.
 	Recurrent           bool        `datastore:"recurrent,omitempty" bson:"recurrent,omitempty" json:"recurrent,omitempty"`                                  // Flag que indica se candidato participou do último pleito.
+	AcceptedTerms       time.Time   `datastore:"accepted_terms" bson:"accepted_terms" json:"accepted_terms"`                                                 // Indica o momento em que o candidato aceitou os termos da plataforma.
 }
 
 // Proposal é uma struct para armazenar os tópicos relacionados ao candidato e suas propostas para os mesmos.
